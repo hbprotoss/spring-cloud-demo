@@ -25,6 +25,7 @@
     <modules>
         <module>eureka-demo</module>
         <module>service-provider</module>
+        <module>service-consumer</module>
     </modules>
 
     <dependencyManagement>
