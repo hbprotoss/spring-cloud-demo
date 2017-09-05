@@ -23,7 +23,7 @@
     </properties>
 
     <modules>
-        <module>eureka-demo</module>
+        <module>eureka-server</module>
         <module>service-provider</module>
         <module>service-consumer</module>
     </modules>
@@ -34,6 +34,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>Dalston.SR3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-config</artifactId>
+                <version>1.3.2.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
