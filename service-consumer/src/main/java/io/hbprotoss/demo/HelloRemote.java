@@ -9,4 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface HelloRemote {
     @RequestMapping(value = "/hello")
     String hello(@RequestParam(value = "name") String name);
+
+    @RequestMapping(value = "/lag")
+    int lag(@RequestParam(value = "number") int number);
 }

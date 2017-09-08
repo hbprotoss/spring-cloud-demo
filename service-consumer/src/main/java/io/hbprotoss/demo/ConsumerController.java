@@ -16,4 +16,8 @@ public class ConsumerController {
         return helloRemote.hello(name);
     }
 
+    @RequestMapping("/lag/{number}")
+    public String lag(@PathVariable int number) {
+        return String.valueOf(helloRemote.lag(number));
+    }
 }
