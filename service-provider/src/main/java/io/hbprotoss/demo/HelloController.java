@@ -8,13 +8,9 @@ import javax.annotation.Resource;
 
 @RestController
 public class HelloController {
-
-    @Resource
-    private HelloRemote helloRemote;
-
     @RequestMapping("/hello")
     public String index(@RequestParam String name) {
-        return "hello "+name+"，this is first messge";
+        return "hello " + name + "，this is first messge";
     }
 
     @RequestMapping("/lag")
@@ -24,10 +20,5 @@ public class HelloController {
         }
         Thread.sleep(number * 1000);
         return number * 2;
-    }
-
-    @RequestMapping("/test")
-    public String test(@RequestParam int param) {
-        return String.valueOf(helloRemote.lag(param));
     }
 }

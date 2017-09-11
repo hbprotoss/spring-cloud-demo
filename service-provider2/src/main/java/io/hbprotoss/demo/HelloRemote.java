@@ -13,6 +13,4 @@ public interface HelloRemote {
     @RequestMapping(value = "/lag")
     int lag(@RequestParam(value = "number") int number);
 
-    @RequestMapping(value = "/test")
-    String test(@RequestParam(value = "param") int param);
 }
