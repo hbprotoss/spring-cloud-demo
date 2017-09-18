@@ -27,6 +27,7 @@
         <module>service-provider</module>
         <module>service-provider2</module>
         <module>service-provider3</module>
+        <module>boot-mvc</module>
         <module>service-consumer</module>
         <module>config-server</module>
         <module>zipkin-server</module>
