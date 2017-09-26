@@ -34,10 +34,12 @@ public class ProviderApplicationTest {
         span.logEvent("Before Calling");
         Thread.sleep(1000L);
         Span span2 = tracer.createSpan("http:span2", span);
+        span2.tag("key", "value");
         span2.logEvent("Before span2 Calling");
         Thread.sleep(1000L);
         span2.logEvent("After span2 Calling");
         tracer.close(span2);
+        Thread.sleep(1000L);
         span.logEvent("After Calling");
         tracer.close(span);
     }
