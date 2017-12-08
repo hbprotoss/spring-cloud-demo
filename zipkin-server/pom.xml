@@ -56,6 +56,16 @@
         <finalName>zipkin-server</finalName>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/application.properties</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
@@ -65,7 +75,7 @@
                 <version>1.0.0</version>
                 <configuration>
                     <imageName>hbprotoss/zipkin-server</imageName>
-                    <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+                    <dockerDirectory>${project.basedir}</dockerDirectory>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -73,6 +83,8 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+                    <serverId>docker-hub</serverId>
+                    <registryUrl>https://index.docker.io/v1/</registryUrl>
                 </configuration>
             </plugin>
         </plugins>
