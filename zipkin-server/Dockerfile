@@ -9,4 +9,4 @@ RUN mkdir -p ${LOG_ROOT}
 ADD target/zipkin-server.jar ${ZIPKIN_ROOT}/zipkin-server.jar
 EXPOSE 8080
 
-CMD ["/bin/sh", "-c", "java -jar -Dspring.config.location=/opt/zipkin/config/application.properties zipkin-server.jar  > /var/log/zipkin.log 2>&1"]
+CMD ["/bin/sh", "-c", "java -jar -Dspring.config.location=/opt/zipkin/config/application.properties zipkin-server.jar  >> /var/log/zipkin.log 2>&1"]
